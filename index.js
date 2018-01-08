@@ -9,9 +9,8 @@ Yang diketahui / Input
 
 Pseudocode
 lakukan perulangan yang dimulai dari angka dimana tanggal gym buka dan berakhir di angka gym tutup
-buat kondisi dimana gym tutup setiap tanggal 5 dan kelipatannya
-
-
+buat kondisi dimana gym tutup setiap tanggal 5 dan kelipatannya dimulai dari 1!
+buat kondisi dimana tono anton dan budi akan datang sesuai dengan waktunya masing-masing dimulai dari tanggal 7!
 */
 
 
