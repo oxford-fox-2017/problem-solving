@@ -1,47 +1,44 @@
 function aturJadwal (start,end){
     // Buat sebuah pengulangan untuk mengeluarkan jadwal Tono 2 hari sekali
+    // Buat sebuah pengulangan untuk mengeluarkan jadwal Anton 4 hari sekali
+    // Buat sebuah pengulangan untuk mengeluarkan jadwal Budi 5 hari sekali
     var jadwalTono = []
-    
-        for(var x = start; x <= end; x+=2){
-            jadwalTono.push(x)
-        }
-        
-        // Validasi jadwal Tono
-        console.log("Jadwal Tono: " + jadwalTono)
-
-    // Buat Jadwal Anton 4 hari sekali
     var jadwalAnton = []
-    
-        for(var z = start;z<=end; z+=4){
-            jadwalAnton.push(z)
-        }
-        
-        // Validasi jadwal ANton
-        console.log("Jadwal Anton: " + jadwalAnton)
-    
-    // Buat Jadwal Budi
     var jadwalBudi = []
     
-        for(var i = start;i<=end; i+=5){
-            jadwalBudi.push(i)
+        for(var x = start; x <= end; x++){
+            if(x === start){
+                jadwalTono.push(x)
+                jadwalAnton.push(x)
+                jadwalBudi.push(x)
+                x++
+            }
+
+            if((x - start) % 2 === 0){
+                jadwalTono.push(x)
+            }
+
+            if((x - start) % 4 === 0){
+                jadwalAnton.push(x)
+            }
+
+            if((x - start) % 5 === 0){
+                jadwalBudi.push(x)
+            }
         }
-    
-        console.log("Jadwal Budi: " + jadwalBudi)
-    
-    
-    
     
     var tanggal = "tanggal"
     var libur = "Tempat Fitness Tutup"
     
     
     var isi = "";
+    var hasil = "";
     
     for(var y = start; y<=end ;y++){
         var member = []
     
         if(y % 5 === 0){
-            console.log(tanggal + " " + y + ": " + libur )
+            hasil = hasil + tanggal + " " + y + ": " + libur + "\n"
             y++
         } 
         
@@ -57,8 +54,10 @@ function aturJadwal (start,end){
             member.push("Budi")
         }
 
-        console.log(tanggal + " " + y + ": " + member)
+        hasil = hasil + tanggal + " " + y + ": " + member.join(", ") + "\n"
     }
+
+    return hasil
 }
 
 console.log(aturJadwal(7,31))
