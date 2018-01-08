@@ -18,11 +18,18 @@ function problem_solving(input) {
       console.log(`Tanggal ${i}: Tempat Fitnes Libur`)
     } else {
       let result = []
-      jadwal.forEach(value => {
-        if ( (i - 7) % value.waktu === 0 ) {
-          result.push(value.nama)
-        }
-      })
+      // jadwal.forEach(value => {
+        //   if ( (i - 7) % value.waktu === 0 ) {
+        //     result.push(value.nama)
+        //   }
+        // })
+      for(key in jadwal){
+        let value = jadwal[key] 
+          if ( (i - 7) % value.waktu === 0 ) {
+            result.push(value.nama)
+          }
+      }
+      // 
       console.log(`Tanggal ${i}: ${result}`)
     }
 
