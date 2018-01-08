@@ -1,22 +1,40 @@
 //PSEUDOCODE
-inisialisasi var tanggal awal 7
-inisialisasi var bulan 31
-inisialisasi array tanggal dari 7 hingga 31
+/*
+  FOR dari var i = 7 hingga sama dengan 31
+    IF i%5 = 0 Libur
+    ELSE IF hari kelipatan 2 & 4 & 5 dari 0, tono budi anton masuk gym
+    ELSE IF hari kelipatan 2 & 4 dari 0, tono dan anton masuk gym
+    ELSE IF hari kelipatan 2 & 5 dari 0, tono dan budi masuk gym
+    ELSE IF hari kelipatan 4 & 5 dari 0, anton dan budi masuk gym
+    ELSE IF hari kelipatan 2 dari 0, tono masuk gym
+    ELSE IF hari kelipatan 4 dari 0, anton masuk gym
+    ELSE IF hari kelipatan 5 dari 0, budi masuk gym
+    ELSE gym kosong
+*/
+// END FOR
 
-push tono, anton, budi ke tanggal[tanggal awal]
+function gym(string) {
+  for(var i = 7; i <= 31; i++) {
+    if(i%5 === 0) {
+      console.log("Tanggal " + i +": Libur");
+    } else if ((i-7)%2 === 0 && (i-7)%4 === 0 && (i-7)%5 === 0) {
+      console.log("Tanggal " + i + ": Tono, Budi, Anton")
+    } else if((i-7)%2 === 0 && (i-7)%4 === 0) {
+      console.log("Tanggal " + i +": Tono, Anton");
+    } else if((i-7)%2 === 0 && (i-7)%5 === 0) {
+      console.log("Tanggal " + i +": Tono, Budi");
+    } else if((i-7)%4 === 0 && (i-7)%5 === 0) {
+      console.log("Tanggal " + i +": Anton, Budi");
+    } else if ((i-7)%2 === 0) {
+      console.log("Tanggal " + i + ": Tono");
+    } else if ((i-7)%4 === 0) {
+      console.log("Tanggal " + i + ": Anton");
+    } else if((i-7)%5 === 0) {
+      console.log("Tanggal " + i + ": Budi");
+    } else {
+      console.log("Tanggal " + i + ": ");
+    }
+  }
+}
 
-FOR dari tanggal awal hingga sama dengan bulan, tanggal awal ++
-	IF tanggal awal%5 = 0
-		push libur ke tanggal[tanggal awal]
-	ELSE IF tanggal awal%2 !=0 && tanggal awal%5 !=0
-		push tono ke tanggal[tanggal awal]
-	ELSE IF tanggal awal%4 && tanggal awal%5 !=0 
-		push anton ke tanggal[tanggal awal]
-	ELSE IF tanggal awal%5 && tanggal awal%5 !=0
-		push budi ke tanggal[tanggal awal]
-	END IF
-END FOR
-
-FOR dari var i = 7 hingga sama dengan bulan, i++
-	CONSOLE.LOG "Tanggal " + i + ": " + array[i]
-END FOR
+gym("Libur");
