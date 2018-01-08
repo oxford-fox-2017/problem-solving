@@ -1,7 +1,8 @@
 /*
 1. buat looping untuk menentukan jadwal gym tiap bulannya.
 2. buat kondisi if untuk menentukan tanggal tutup gym.
-
+3. buat looping untuk mengecek pengunjung gym per schedule membernya.
+4. buat koma dan spasi untuk memberi jarak antar nama member.
  */
 
 var openGym = 7;
