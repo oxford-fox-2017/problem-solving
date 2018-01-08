@@ -2,62 +2,44 @@ function aturJadwal (start,end){
     // Buat sebuah pengulangan untuk mengeluarkan jadwal Tono 2 hari sekali
     // Buat sebuah pengulangan untuk mengeluarkan jadwal Anton 4 hari sekali
     // Buat sebuah pengulangan untuk mengeluarkan jadwal Budi 5 hari sekali
-    var jadwalTono = []
-    var jadwalAnton = []
-    var jadwalBudi = []
-    
-        for(var x = start; x <= end; x++){
-            if(x === start){
-                jadwalTono.push(x)
-                jadwalAnton.push(x)
-                jadwalBudi.push(x)
-                x++
-            }
+    var customer = [{
+        nama: "Tono",
+        reps: 2,
+    },
+    {
+        nama: "Anton",
+        reps: 4,  
+    },
+    {
+        nama: "Budi",
+        reps: 5, 
+    }]
 
-            if((x - start) % 2 === 0){
-                jadwalTono.push(x)
-            }
+    // Menentukan jadwal perbulan
+    for(var x = start; x<=end; x++){
+        var jadwal = []
+        jadwal.push(x)
 
-            if((x - start) % 4 === 0){
-                jadwalAnton.push(x)
-            }
+        if(x % 5 === 0){
+            console.log("Tanggal " + jadwal + ": Tempat Fitnes Tutup")
+            x++
 
-            if((x - start) % 5 === 0){
-                jadwalBudi.push(x)
-            }
-        }
-    
-    var tanggal = "tanggal"
-    var libur = "Tempat Fitness Tutup"
-    
-    
-    var isi = "";
-    var hasil = "";
-    
-    for(var y = start; y<=end ;y++){
-        var member = []
-    
-        if(y % 5 === 0){
-            hasil = hasil + tanggal + " " + y + ": " + libur + "\n"
-            y++
-        } 
-        
-        if (jadwalTono.indexOf(y) !== -1){
-           member.push("Tono")
-        } 
-        
-        if(jadwalAnton.indexOf(y) !== -1){
-            member.push("Anton")
-        } 
-        
-        if(jadwalBudi.indexOf(y) !== -1){
-            member.push("Budi")
+            jadwal = x
         }
 
-        hasil = hasil + tanggal + " " + y + ": " + member.join(", ") + "\n"
+
+        // Menentukan jadwal perhari
+        var jadwalPerHari = []
+        for(var y = 0; y <= customer.length - 1; y++){
+            if((x-start) % customer[y].reps  === 0){
+                jadwalPerHari.push(customer[y].nama)
+            }
+        }
+        console.log("Tanggal " + jadwal + ": " + jadwalPerHari.join(", "))
     }
 
-    return hasil
+    
+    
 }
 
 console.log(aturJadwal(7,31))
