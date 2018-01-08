@@ -11,4 +11,25 @@ else
 munculkan semua
 
 */
-
+for (let i = 7; i<=31 ; i++){
+    let jadwal = 'Tanggal '+i+':';
+    let nama = [];
+    //console.log(jadwal);
+    if(i%5===0){
+        jadwal+= ' Tempat Fitness Tutup';
+    }
+    else{
+        let start = i-7;
+        if(start%2===0){
+            nama.push(' Tono');
+        }
+        if(start%4===0){
+            nama.push(' Anton');
+        }
+        if(start%5===0){
+            nama.push(' Budi');
+        }
+    }
+    
+console.log(jadwal+nama.join());
+};
