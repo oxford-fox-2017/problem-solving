@@ -15,7 +15,7 @@ function problem_solving(input) {
   let buka = 7
   for (let i = buka; i <= bulan; i++) {
     if (i % 5 === 0) {
-      console.log('Tanggal :' + i + ' Tempat Fitnes Libur')
+      console.log(`Tanggal ${i}: Tempat Fitnes Libur`)
     } else {
       let result = []
       jadwal.forEach(value => {
