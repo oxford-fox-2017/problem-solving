@@ -1,5 +1,18 @@
 'use strict'
 
+/*
+1. buat array of object untuk member yang isinya inputan (ada name dan day)
+2. looping sebanyak 31 kali dan dimulai dari index ke 7
+3. buat variabel array tampung
+4. kondisi
+   kalau index habis dibagi 5 print "tempat fitness libur"
+   else
+   looping setiap objek dari array of object objMember
+    kondisi
+    kalau index - 7 habis dibagi day setiap member, push ke array tampung name nya
+5. print array tampungnya
+*/
+
 let objMember = [
   {
     name  : 'Tono',
